@@ -14,6 +14,6 @@
 ---
 include:
   - board: nrfmicro_13
-    shield: tbk_mini_left
+    shield: daochoc_left
   - board: nrfmicro_13
-    shield: tbk_mini_right
+    shield: daochoc_right
