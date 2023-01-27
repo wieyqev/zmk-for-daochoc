@@ -45,16 +45,16 @@
                 compatible = "zmk,keymap";
                 default_layer {
 // --------------------------------------------------------------------------------------
-//       | ESC  |  Q  |  W  |  E  |  R  |  T  |    |  Y  |  U   |  I  |  O  |  P  |  \   | 
-//  | GUI| CTRL |  A  |  S  |  D  |  F  |  G  |    |  H  |  J   |  K  |  L  |  ;  |  '   |  GUI |
-//       |LSHFT |  Z  |  X  |  C  |  V  |  B  |    |  N  |  M   |  ,  |  .  |  /  |  `   |
-//                | ALT | SPC | LWR | SPC |    | LWR | BKSP | RSE | GUI |
+//  | GUI  | ESC  |  Q  |  W  |  E  |  R  |  T  |    |  Y  |  U   |  I  |  O  |  P  |  \   |  GUI |
+//         | CTRL |  A  |  S  |  D  |  F  |  G  |    |  H  |  J   |  K  |  L  |  ;  |  '  | 
+//         |LSHFT |  Z  |  X  |  C  |  V  |  B  |    |  N  |  M   |  ,  |  .  |  /  |  `   |
+/      /                      | ALT | SPC | SPC |    | BKSP|  ENT | GUI |
 // --------------------------------------------------------------------------------------
                         bindings = <
 &kp LGUI &kp ESC   &kp Q   &kp W   &kp E   &kp R    &kp T    &kp Y   &kp U    &kp I       &kp O     &kp P      &kp BSLH  &kp RGUI
          &kp LCTRL &kp A   &kp S   &kp D   &kp F    &kp G    &kp H   &kp J    &kp K       &kp L     &kp SEMI   &kp QUOT
-         &kp LSHFT &kp Z   &kp X   &kp C   &kp V    &kp B    &kp N   &kp M    &kp COMMA   &kp DOT   &kp FSLH   &bhm RSHIFT GRAVE
-              &kp LALT   &lt NAV_L SPACE    &bhm LSHIFT SPACE     &lt NUM_L BKSP  &lt ARROW_L RET    &lt BT_L LGUI
+         &kp LSHFT &bhm LCTRL  Z   &kp X   &kp C   &kp V    &kp B    &kp N   &kp M    &kp COMMA   &kp DOT   &bhm RSHIFT FSLH   &bhm RSHIFT GRAVE
+              &kp LALT   &lt NAV_L SPACE   &kp SPACE     &lt NUM_L BKSP  &lt ARROW_L RET    &lt BT_L LGUI
                         >;
                 };
    nav_layer {
