@@ -48,12 +48,12 @@
 //  | GUI  | ESC  |  Q  |  W  |  E  |  R  |  T  |    |  Y  |  U   |  I  |  O  |  P  |  \   |  GUI |
 //         | CTRL |  A  |  S  |  D  |  F  |  G  |    |  H  |  J   |  K  |  L  |  ;  |  '  | 
 //         |LSHFT |  Z  |  X  |  C  |  V  |  B  |    |  N  |  M   |  ,  |  .  |  /  |  `   |
-//                      | ALT | SPC | SPC |    | BKSP|  ENT | GUI |
+//                      | ALT | SPC | SPC |     |BKSP| ENT | GUI  |
 // --------------------------------------------------------------------------------------
                         bindings = <
 &kp LGUI &kp ESC   &kp Q   &kp W   &kp E   &kp R    &kp T    &kp Y   &kp U    &kp I       &kp O     &kp P      &kp BSLH  &kp RGUI
          &kp LCTRL &kp A   &kp S   &kp D   &kp F    &kp G    &kp H   &kp J    &kp K       &kp L     &kp SEMI   &kp QUOT
-         &kp LSHFT &bhm LSHFT  Z   &kp X   &kp C   &kp V    &kp B    &kp N   &kp M    &kp COMMA   &kp DOT   &bhm RSHIFT FSLH   &bhm RSHIFT GRAVE
+         &kp LSHFT &mt LSHIFT Z   &kp X   &kp C   &kp V    &kp B    &kp N   &kp M    &kp COMMA   &kp DOT   &mt LSHIFT FSLH   &bhm RSHIFT GRAVE
               &kp LALT   &lt NAV_L SPACE   &kp SPACE     &lt NUM_L BKSP  &lt ARROW_L RET    &lt BT_L LGUI
                         >;
                 };
