@@ -15,6 +15,11 @@
 #define SYM_L 3
 #define ARROW_L 4
 #define BT_L 5
+#define N 6
+
+// Home row mods macro
+#define HRML(k1,k2,k3,k4) &ht LSHFT k1  &ht LALT k2  &ht LCTRL k3  &ht LGUI k4
+#define HRMR(k1,k2,k3,k4) &ht RGUI k1  &ht RCTRL k2  &ht RALT k3  &ht RSHFT k4
 
 &lt { quick_tap_ms = <200>; };
 &mt { quick_tap_ms = <200>; };
@@ -41,20 +46,31 @@
     };
 
 
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│  0       │  1       │  2       │  3       │  4       │   │  5       │  6       │  7       │  8       │  9       │
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│ 10       │ 11       │ 12       │ 13       │ 14       │   │ 15       │ 16       │ 17       │ 18       │ 19       │
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│ 20       │ 21       │ 22       │ 23       │ 24       │   │ 25       │ 26       │ 27       │ 28       │ 29       │
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────╯
+        //                      | 30       | 31       | 32       |   | 33       | 34       | 35       |
+        //                      ╰──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────╯
+
+
         keymap {
                 compatible = "zmk,keymap";
                 default_layer {
 // --------------------------------------------------------------------------------------
 //  | GUI  | ESC  |  Q  |  W  |  E  |  R  |  T  |    |  Y  |  U   |  I  |  O  |  P  |  \   |  GUI |
-//         | CTRL |  A  |  S  |  D  |  F  |  G  |    |  H  |  J   |  K  |  L  |  ;  |  '  | 
+//         | CTRL |  A  |  S  |  D  |  F  |  G  |    |  H  |  J   |  K  |  L  |  '  |  ;  |  
 //         |LSHFT |  Z  |  X  |  C  |  V  |  B  |    |  N  |  M   |  ,  |  .  |  /  |  `   |
 //                      | ALT | SPC | SPC |     |BKSP| ENT | GUI  |
 // --------------------------------------------------------------------------------------
                         bindings = <
 &kp LGUI &kp ESC   &kp Q   &kp W   &kp E   &kp R    &kp T    &kp Y   &kp U    &kp I       &kp O     &kp P      &kp BSLH  &kp RGUI
-         &kp LCTRL &kp A   &kp S   &kp D   &kp F    &kp G    &kp H   &kp J    &kp K       &kp L     &kp SEMI   &kp QUOT
-         &kp LSHFT &mt LSHIFT Z   &kp X   &kp C   &kp V    &kp B    &kp N   &kp M    &kp COMMA   &kp DOT   &mt RSHIFT FSLH   &mt RSHIFT GRAVE
-              &kp LALT   &lt NAV_L SPACE   &kp SPACE     &lt NUM_L BKSP  &lt ARROW_L RET    &lt BT_L LGUI
+         &kp LCTRL HRML(A,   S,     D,      F)      &kp G    &kp H   &kp J    &kp K       &kp L     &kp QUOT& &kp SEMI   
+         &kp LSHFT &kp Z   &kp X   &kp C   &kp V    &kp B    &kp N   &kp M    &kp COMMA   &kp DOT   &mt RSHIFT FSLH   &mt RSHIFT GRAVE
+              &kp LALT   &lt NAV_L SPACE   &lt n SPACE   &lt NUM_L BKSP  &lt ARROW_L RET    &lt BT_L LGUI
                         >;
                 };
    nav_layer {
@@ -120,5 +136,21 @@ bt_layer {
             >;
         };
 
+n_layer {
+            label = "n";
+            bindings = <
+           //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+           //│  ~       │   `      │  [       │  ]       │          │   │  ^       │  {       │  }       │          │          │
+&trans &trans &kp TILDE   &kp GRAVE  &kp LBKT   &kp RBKT    &trans        &kp CARET  &kp LBRC   &kp RBRC   &trans      &trans    &trans  &trans 
+           //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+           //│ CTRL A   │ CTRL S   │ CTRL D   │  $       │  %       │   │          │   ;      │   :      │  \       │   _      │
+&trans         &kp LC(A)  &kp LC(S) &kp LC(D)  &kp DLLR   &kp PRCNT      &trans    &kp SEMI   &kp COLON  &kp BSLH   &kp UNDER    &trans 
+           //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+           //│ CTRL Z   │ CTRL X   │ CTRL C   │ CTRL V   │          │   │          │          │          │  │       │          │
+&trans         &kp LC(Z) &kp LC(X)   &kp LC(C)  &kp LC(V)   &trans         &trans    &trans     &trans     &kp PIPE     &trans   &trans 
+           //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
+                                    &trans       &trans     &trans         &trans     &trans     &trans 
+           //          
+ 
         };
 };
