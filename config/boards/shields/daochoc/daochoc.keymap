@@ -149,7 +149,7 @@
         arrow_layer {
             label = "Arrow";
             bindings = <
-&trans &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp UP  &trans  &kp del  &kp del   &trans
+&trans &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp UP  &trans &kp DEL &kp DEL &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &kp HOME  &kp LEFT  &kp DOWN  &kp RIGHT  &kp END  &trans  
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  
                 &trans      &trans          &trans       &trans    &trans  &trans         
